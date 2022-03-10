@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>AllBooks Login</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/mycss.css" th:href="@{/css/mycss.css}" />
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+	<h1>Login</h1>
+	<form method="post" th:action="@{/login}">
+		<div>
+			Email: <input type="email" name="username" /><br/>
+			Password: <input type="password" name="password" /><br />
+			<input type="submit" name="login-submit" value="Log In" />
+		</div>
+		<div th:if="${param.error}">
+			<div class="error">
+				Invalid email or password.
+			</div>
+		</div>
+		<div th:if="${param.logout}">
+			<div class="error">
+				You have been logged out.
+			</div>
+		</div>
+	</form>
+	<p><a href="/" th:href="@{/}">Back to Home Page</a></p>
+	<footer th:replace="fragments/footer.html :: footer"></footer>
+</body>
+</html>

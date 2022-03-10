@@ -1,0 +1,7 @@
+CREATE TABLE student(
+	id LONG PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(255),
+	school VARCHAR(255),
+	program VARCHAR(255),
+	favourite VARCHAR(255)
+);

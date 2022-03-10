@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit an Avenger!</title>
+</head>
+<body>
+	<h1>Edit your hero's information</h1>
+	
+	<form action="#" th:action="@{/updateAvenger}" method="POST" th:object="${avenger}">
+	<!-- Hidden input for id field to populate controller when we get it back via @ModelAttribute -->
+		<input type=hidden th:field="*{id}">
+		<p>Name: <input type="text" th:field="*{name}" required></p>
+		<p>Age: <input type="number" th:field="*{age}" required></p>
+		<p><input type="submit" value="Update!"></p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Thymeleaf Lecture</title>
+</head>
+<body>
+	<h1 style="color:blue;" th:text="'Today is ' + ${serverDate}">Today is somethingErOther</h1>
+	<img src="../static/test.jpg" width="200px" th:src="@{/test.jpg}" />
+</body>
+</html>

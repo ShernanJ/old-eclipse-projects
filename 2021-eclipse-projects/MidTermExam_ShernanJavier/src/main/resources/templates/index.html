@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Midterm Exam - Shernan Javier</title>
+<link th:href="@{/styles/styles.css}" rel="stylesheet" />
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans&family=Space+Grotesk:wght@700&display=swap}" rel="stylesheet">
+</head>
+<body>
+	<h1>Enter your order:</h1>
+	<form method="POST" action="" th:action="@{/orderPizza}" th:object="${pizzaOrder}">
+		<input type="hidden" name="id" th:field="*{id}" />
+		<p>First Name: </p>
+		<input type="text" name="firstName" th:field="*{firstName}" required/> 
+		<p>Number of Pizzas: </p>
+		<select th:field="*{totalPizzas}">
+			<option th:each="p : *{numberOfPizzas}" th:value="${p}" th:text="${p}" />
+		</select> 
+		<p>Size of Pizza: </p>
+		<select th:field="*{sizeOfPizza}">
+			<option th:each="s : *{sizes}" th:value="${s}" th:text="${s}" />
+		</select> 
+		<p>Number of Toppings: </p> 
+		<select th:field="*{totalToppings}">
+			<option th:each="t : *{numberOfToppings}" th:value="${t}" th:text="${t}" />
+		</select> 
+		<input type="hidden" name="dateWritten" th:field="*{dateWritten}" />
+		<input type="hidden" name="timeWritten" th:field="*{timeWritten}" />
+		<input type="hidden" name="pizzaPrice" th:field="*{pizzaPrice}" />
+		<input type="hidden" name="totalPrice" th:field="*{totalPrice}" /><br/><br/>
+		<input type="submit" value="Order" />
+	</form>
+	
+</body>
+</html>

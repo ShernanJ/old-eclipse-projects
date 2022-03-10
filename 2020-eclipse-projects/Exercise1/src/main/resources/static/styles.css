@@ -1,0 +1,145 @@
+@charset "ISO-8859-1";
+
+/*Font-Family: 'Roboto Condensed', Sans-Serif;
+Font-Size: 35px;
+Font-Family: 'Cabin', Sans-Serif;
+Font-Size: 16px;*/
+html{
+	overflow-x: hidden;
+}
+h1{
+	color: #487CFF;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 4.5rem;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+p, #moving-text-container{
+	color: #487CFF;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 2rem;
+	text-align: center;
+}
+#display-photo{
+	display: block;
+	height: auto;
+	width: 250px;
+	border-radius: 50%;
+	border: #487CFF thick solid;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.nav-list{
+	list-style-type: none;
+	text-align: center;
+}
+.nav-list li{
+	display: inline;
+}
+.nav-list li a{
+	font-family: 'Cabin', sans-seif;
+	font-size: 32px;
+	text-decoration: none;
+	color: #36B7FF;
+	text-align: center;
+	padding: 16px;
+}
+.nav-list li a:hover{
+	color:#9BDBFF;
+}
+.about-text{
+	font-size: 1.6rem;
+	text-align: left;
+}
+#about-container{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.info-list{
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	font-family: 'Cabin', sans-seif;
+	font-size: 32px;
+	color: #36B7FF;
+}
+.info-list li{
+	padding-bottom: 16px;
+}
+
+.back-btn{
+	position: absolute;
+	top: 5%;
+	left: 20px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: #36B7FF;
+	color: white;
+	font-size: 42px;
+	font-family: 'Roboto Condensed', sans-serif;
+	text-decoration: none;
+	text-align: center;
+}
+.back-btn:hover{
+	background-color:#9BDBFF;
+	color: #bfe8ff;
+}
+
+#moving-text-container:before{
+	position: relative;
+	animation: move 30s infinite;
+	content: "JavaScript";
+	font-size: 2.5rem;
+	font-weight: bold;
+	top: 32px;
+}
+
+/* Yeaaaaa I took the time to actually do this with vanilla CSS, please endorse my skills on LinkedIn thank you LOL */
+@keyframes move{
+	0%{ opacity: 0; left: -1250px; content: "JavaScript"; }
+	5%{ opacity: 1; left: 0;}
+	8%{ opacity: 0;}
+	9%{ left: 1250px; opacity: 0;content: "JavaScript"; }
+	10%{ opacity: 0; left: -1250px; content: "ReactJS"; }
+	15%{ opacity: 1; left: 0;}
+	18%{ opacity: 0; }
+	19%{left: 1250px; opacity: 0; content: "ReactJS" }
+	20%{ opacity: 0; left: -1250px; content: "NodeJS"; }
+	25%{ opacity: 1; left: 0;}
+	28%{ opacity: 0;}
+	29%{ left: 1250px; opacity: 0;content: "NodeJS"; }
+	30%{ opacity: 0; left: -1250px; content: "Java"; }
+	35%{ opacity: 1; left: 0;}
+	38%{ opacity: 0;}
+	39%{ left: 1250px; opacity: 0;content: "Java"; }
+	40%{ opacity: 0; left: -1250px; content: "Python"; }
+	45%{ opacity: 1; left: 0;}
+	48%{ opacity: 0;}
+	49%{ left: 1250px; opacity: 0;content: "Python"; }
+	50%{ opacity: 0; left: -1250px; content: "Flutter"; }
+	55%{ opacity: 1; left: 0;}
+	58%{ opacity: 0;}
+	59%{ left: 1250px; opacity: 0;content: "Flutter"; }
+	60%{ opacity: 0; left: -1250px; content: "React Native"; }
+	65%{ opacity: 1; left: 0;}
+	68%{ opacity: 0;}
+	69%{ left: 1250px; opacity: 0;content: "React Native"; }
+	70%{ opacity: 0; left: -1250px; content: "MongoDB"; }
+	75%{ opacity: 1; left: 0;}
+	78%{ opacity: 0;}
+	79%{ left: 1250px; opacity: 0;content: "MongoDB"; }
+	80%{ opacity: 0; left: -1250px; content: "MySQL"; }
+	85%{ opacity: 1; left: 0;}
+	88%{ opacity: 0;}
+	89%{ left: 1250px; opacity: 0;content: "MySQL"; }
+	90%{ opacity: 0; left: -1250px; content: "Express"; }
+	95%{ opacity: 1; left: 0;}
+	98%{ opacity: 0;}
+	99%{ left: 1250px; opacity: 0;content: "Express"; }
+	100%{ opacity: 0; left: -1250px; content: "JavaScript"; }
+}

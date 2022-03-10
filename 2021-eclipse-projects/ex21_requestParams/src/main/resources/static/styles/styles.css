@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+/* font-family: 'Cabin', sans-serif; */
+/* font-family: 'Roboto Condensed', sans-serif; */
+
+h1, label {
+	font-family: 'Roboto Condensed', sans-seif;
+}
+
+p, input {
+	font-family: 'Cabin', sans-serif;
+}
+
+label {
+	display: inline-block;
+	width: 140px;
+	text-align: right;
+	margin: 5px 2px 0px auto;
+}
+
+.textInput {
+	width: 30%;
+}
+
+form {
+	width: 80%;
+}

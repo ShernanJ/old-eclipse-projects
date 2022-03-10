@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Click one of the buttons to get started!</h1>
+	<form action="#" method="get">
+		<input type="submit" value="Hidden Field"
+		formaction="#" th:formaction="@{/startHidden}">
+		<br/><br/>
+		<input type="submit" value="Cookie"
+		formaction="#" th:formaction="@{/startCookie}">
+		<br/><br/>
+		<input type="submit" value="Session"
+		formaction="#" th:formaction="@{/startSession}">
+	</form>
+</body>
+</html>

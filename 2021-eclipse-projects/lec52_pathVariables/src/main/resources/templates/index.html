@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercise 5.1 - Shernan Javier</title>
+</head>
+<body>
+	<h1>Shernan Javier's Exercise 5.1 Submission!</h1>
+	<table th:if="${studentList != null AND studentList != ''}">
+		<tr th:each="s:${studentList}">
+			<td th:text="${s.name}">Frank</td>
+			<td><a th:href="@{/editStudentById/} + ${s.id}">Edit</a></td>
+			<td><a th:href="@{/deleteStudentById/} + ${s.id}">Delete</a></td>
+		</tr>
+	</table>
+	<form method="post" action="" th:action="@{/insertStudent}" th:object="${student}">
+		<input type="hidden" name="id" th:field="*{id}"/>
+		Name: <input type="text" name="name" th:field="*{name}" /><br>
+		<input type="submit" value="Go!" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>AllBooks Virtual Inventory</title>
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+	<p>Please select an option: </p>
+	<a href="/login" th:href="@{/secure}">Login</a>
+	<a href="/register" th:href="@{/register}">Register</a>
+	
+	<p>You must be logged in to view the books.</p>
+	<footer th:replace="fragments/footer.html :: footer"></footer>
+</body>
+</html>

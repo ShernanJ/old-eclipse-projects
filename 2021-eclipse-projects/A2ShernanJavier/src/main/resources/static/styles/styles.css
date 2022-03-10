@@ -1,0 +1,95 @@
+h1, h3, h4, .subject-title {
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+p, table, tr, td {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	text-align:center;
+}
+table {
+	width: 400px;
+	margin: 12px auto;
+}
+
+.subject-container {
+	font-weight: 200;
+	font-size: small;
+	width: 200px;
+	height: 200px;
+	flex: 1;
+	cursor: pointer;
+	padding: 5px;
+	margin: 10px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#notelist-container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 10px 10%;
+	padding: 5px;
+}
+
+.subject-title {
+	font-weight: 800;
+	font-size: large;
+}
+
+#General {
+	background-color: #e6ecec;
+	border: 4px #d7e1e1 solid;
+}
+
+#Grocery {
+	background-color: #cbffe3;
+	border: 4px #aeffd2 solid;
+}
+
+#School {
+	background-color: #d4f8ff;
+	border: 4px #bff4ff solid;
+}
+
+#Work {
+	background-color: #ffd5e5;
+	border: 4px #ffbfd8 solid;
+}
+
+#Chores {
+	background-color: #fbd3ff;
+	border: 4px #f9c4ff solid;
+}
+
+#Game {
+	background-color: #fffecf;
+	border: 4px #fffdb9 solid;
+}
+
+#Hobby {
+	background-color: #d5d2ff;
+	border: 4px #c0bbff solid;
+}
+
+#Other {
+	background-color: #f0e1e1;
+	border: 4px #e2c7c7 solid;
+}
+
+#delete-button {
+	opacity: 0;
+	transition: opacity 0.3s;
+	text-decoration: none;
+	color: #ff6a6a;
+	font-weight: 800;
+}
+
+#noteList:hover #delete-button {
+	opacity: 100;
+	transition: opacity 0.3s;
+}

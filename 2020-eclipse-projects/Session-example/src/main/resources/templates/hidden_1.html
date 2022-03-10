@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 th:text="|Hi there ${name}|">Hi there</h1>
+	<form action="#" method="get" th:action="@{/hidden2}">
+		<!-- Use a hidden field to store the name so we can get it back with the next request -->
+		
+		<input type="hidden" name="name" th:value="${name}">
+		
+		<input type="submit" value="Go to the next page!">
+	</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercise 5.1 - Shernan Javier</title>
+</head>
+<body>
+	<h1>Shernan Javier's Exercise 5.1 Submission!</h1>
+	<form method="post" action="" th:action="@{/insertStudent}" th:object="${student}">
+		<input type="hidden" name="id" th:field="*{id}" /> 
+		Name: <input type="text" name="name" th:field="*{name}" /><br> 
+		School: <input type="text" name="school" th:field="*{school}" /><br> 
+		Program: <input type="text" name="program" th:field="*{program}" /><br>
+		Favourite: <input type="text" name="favourite" th:field="*{favourite}" /><br>
+		<input type="submit" value="Go!" />
+	</form>
+	<table th:if="${studentList != null AND studentList != ''}">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>School</th>
+			<th>Program</th>
+			<th>Favourite</th>
+		</tr>
+		<tr th:each="s:${studentList}">
+			<td th:text="${s.id}">0</td>
+			<td th:text="${s.name}">Steve</td>
+			<td th:text="${s.school}">Waterloo</td>
+			<td th:text="${s.program}">Computer Science</td>
+			<td th:text="${s.favourite}">C++</td>
+		</tr>
+	</table>
+</body>
+</html>

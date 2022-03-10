@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Appointment</title>
+<link rel="stylesheet" th:href="@{/styles/styles.css}" />
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link th:href="@{https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@700&display=swap}" rel="stylesheet">
+</head>
+<body>
+	<h1>Schedule Appointment</h1>
+	<p>Set a preferred appointment time</p>
+	<form method="post" action="/formPost">
+		<label for="firstName">First Name</label> <input class="textInput" type="text"
+			name="firstName" /><br /> <label for="email">Email</label> <input class="textInput"
+			type="email" name="email" /><br /> <label for="appointmentDate">Day</label>
+		<input class="textInput" type="date" name="appointmentDate" /><br /> <label
+			for="appointmentTime">Time</label> <input class="textInput"  type="time"
+			name="appointmentTime" /><br /> <input id="submit" type="submit" value="Go!" />
+	</form>
+</body>
+</html>

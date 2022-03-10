@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Assignment 2 - Shernan Javier</title>
+<link th:href="@{/styles/styles.css}" href="../static/styles/styles.css" rel="stylesheet"/>
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans&family=Space+Grotesk:wght@700&display=swap}" rel="stylesheet">
+</head>
+<body>
+
+	<h1>Welcome to CRUD Notes!</h1>
+	<h3>Press a note to view content:</h3>
+	<h4>or</h4>
+	<button th:onclick="'window.location.href = \'' + @{/createNote} + '\''">Create Note</button>
+	<div th:object="${note}" id="notelist-container">
+		<div th:each="s:*{subjects}">
+			<div th:onclick="'window.location.href = \'' + @{/viewNote/{s}(s=${s})} + '\''" class="subject-container" th:id="${s}">
+				<div th:text="${s}" class="subject-title">Title</div>
+			</div>
+		</div>
+	</div>
+	<p style="font-size:12px">Made by Shernan Javier - ID: 991572411</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- We *must* add the Thymeleaf namespace whenever we use it -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Status</title>
+</head>
+<body>
+	<!-- Here we are using the th:text attribute in the h1 tag -->
+	<!-- When request by Spring, Thymeleaf will place -->
+	<!-- the entire <h1> tag with the dynamic content -->
+	<h1 th:text="|Welcome ${firstName} ${lastName}|">
+		<!-- What will be displayed when opened as a file -->
+		Registration Message
+	</h1>
+</body>
+</html>

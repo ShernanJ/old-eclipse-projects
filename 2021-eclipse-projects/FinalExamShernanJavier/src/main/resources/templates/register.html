@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>AllBooks Register</title>
+<script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/mycss.css" th:href="@{/css/mycss.css}" />
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+	<h1>Register Here!</h1>
+	<div id="error" class="error"></div>
+	<form name="form" action="#" th:action="@{/registerUser}" method="post"
+		onsubmit="return verify()">
+		First Name: <input type="text" name="firstName" /><br>
+		Email: <input type="email" name="username" /><br>
+		Password: <input type="password" name="password" /><br>
+		Verify Password: <input type="password" name="verifyPassword" /><br> 
+		<input type="submit" value="Add User">
+	</form>
+	<footer th:replace="fragments/footer.html :: footer"></footer>
+</body>
+</html>

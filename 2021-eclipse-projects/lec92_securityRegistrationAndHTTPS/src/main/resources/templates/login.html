@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lecture 8.2 - Custom Form Login</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/mycss.css" th:href="@{/css/mycss.css}" />
+</head>
+<body>
+	<h1>Login</h1>
+	<img src="../static/images/driplord.jpg" th:src="@{/images/driplord.jpg}" width="100px" height="100px" />
+	<form method="post" th:action="@{/login}">
+		<div>
+			Email: <input type="email" name="username" /><br/>
+			Password: <input type="password" name="password" /><br />
+			<input type="submit" name="login-submit" value="Log In" />
+		</div>
+		<div th:if="${param.error}">
+			<div class="error">
+				Invalid username or password.
+			</div>
+		</div>
+		<div th:if="${param.logout}">
+			<div class="error">
+				You have been logged out.
+			</div>
+		</div>
+	</form>
+	<p><a href="/" th:href="@{/}">Back to Home Page</a></p>
+</body>
+</html>

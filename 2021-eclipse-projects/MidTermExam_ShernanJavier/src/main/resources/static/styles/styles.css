@@ -1,0 +1,20 @@
+h1 {
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+p, input, select, option {
+	font-family: 'Open Sans', sans-serif;
+}
+
+html {
+	text-align: center;	
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+	margin: 16px auto
+}

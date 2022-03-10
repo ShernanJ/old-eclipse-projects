@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Member Listing</title>
+</head>
+<body>
+	
+	<h1>Here are our current members</h1>
+	
+	<!-- Here we are using the th:each attribute in the <li> tag -->
+	<!-- When requested by Spring, Thymeleaf will create an <li> -->
+	<!-- tag for each element in the members list -->
+	<ul>
+		<li th:each="member : ${members}" th:text="${member}">
+			<!-- Will be displayed when opened statically -->
+			Member Listing
+		</li>
+	</ul>
+	<a href="/">Go to home page</a>
+</body>
+</html>

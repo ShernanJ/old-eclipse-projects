@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create a Note</title>
+<link th:href="@{/styles/styles.css}" href="../static/styles/styles.css" rel="stylesheet"/>
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans&family=Space+Grotesk:wght@700&display=swap}" rel="stylesheet">
+</head>
+<body>
+	<h1>Create a Note:</h1>
+	<form method="POST" action="" th:action="@{/postNote}"
+		th:object="${note}">
+		<input type="hidden" name="id" th:field="*{id}" /> Subject: <select
+			th:field="*{subject}">
+			<option th:each="s:*{subjects}" th:value="${s}" th:text="${s}" />
+		</select><br />
+		<textarea name="content" th:field="*{content}" style="resize: none;"
+			rows="5" cols="51" maxlength="255" placeholder="Enter note here..."></textarea><br/>
+		<input type="hidden" name="dateWritten" th:field="*{dateWritten}" />
+		<input type="hidden" name="timeWritten" th:field="*{timeWritten}" />
+		<input type="submit" value="Post Note" />
+		<input type="button" value="Cancel" th:onclick="'window.location.href = \'' + @{/} + '\''"/>
+	</form>
+</body>
+</html>

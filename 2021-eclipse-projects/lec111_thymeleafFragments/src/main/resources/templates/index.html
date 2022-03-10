@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Index Page</title>
+</head>
+<body>
+
+    <!-- Insert Header -->  
+
+    <header th:insert="fragments/header.html :: header"></header>
+    
+    
+    <!-- Include Menu  -->
+    
+    <div th:replace="${admin} ? ~{fragments/menu.html :: div.menu-admin} : ~{fragments/menu.html :: div.menu}"></div>
+    
+    
+	<!-- Display the list of students -->
+
+	<table th:if="${studentList != null and !studentList.empty}">
+		<tr>
+			<th>Student Name</th>
+		</tr>
+		<tr th:each="s : ${studentList}">
+			<td th:text="${s.name}">Frank</td>
+		</tr>
+	</table>
+
+
+	<!-- Horizontal Line -->
+	<hr>
+	<!-- Form to insert a student to the DB -->
+
+    <form method="post" th:action="@{/insertStudent}" th:object="${student}">
+		Name: <input type="text" th:field="*{name}" /> 
+		<input type="submit" value="Add Student to List!" />
+	</form>
+	
+	<!-- Insert footer -->
+     <footer th:replace="fragments/footer.html :: footer"></footer>
+
+</body>
+</html>

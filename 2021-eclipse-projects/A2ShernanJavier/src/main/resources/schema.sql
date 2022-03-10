@@ -1,0 +1,7 @@
+CREATE TABLE note(
+	id LONG PRIMARY KEY AUTO_INCREMENT,
+	subject VARCHAR(255),
+	content VARCHAR(255),
+	dateWritten VARCHAR(255),
+	timeWritten VARCHAR(255)
+);

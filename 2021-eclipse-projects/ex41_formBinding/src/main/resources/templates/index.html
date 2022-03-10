@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercise 4.1 - Shernan Javier</title>
+<style>
+	table, th, td {
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+	<h1>Add a Game!</h1>
+	<form method="POST" action="#" th:action="@{/addGame}" th:object="${game}">
+		ID:<input type="number" th:field="*{id}" /><br/>
+		Title:<input type="text" th:field="*{title}" /><br/>
+		Publisher:<input type="text" th:field="*{publisher}" /><br/>
+		Platforms: <select th:field="*{platform}">
+			<option th:each="p:*{platforms}" th:value="${p}" th:text="${p}" />
+		</select><br/>
+		Price:<input type="number" th:field="*{price}" /><br/>
+		<input type="submit" value="Add Game" />
+	</form>
+	<br/><br/>
+	<div th:if="${gameList.isEmpty}">
+		<h3>Your list of games is currently empty, Add some!</h3>
+	</div>
+	<div th:if="${!gameList.isEmpty}">
+		<table>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Publisher</th>
+			<th>Platforms</th>
+			<th>Price</th>
+		</tr>
+		<tr th:each="g:${gameList}">
+			<td th:text="${g.id}">12</td>
+			<td th:text="${g.title}">Coder's Journey</td>
+			<td th:text="${g.publisher}">Shernan Studios</td>
+			<td th:text="${g.platform}">PC</td>
+			<td th:text="${g.price}">$40</td>
+		</tr>
+	</table>
+	</div>
+</body>
+</html>

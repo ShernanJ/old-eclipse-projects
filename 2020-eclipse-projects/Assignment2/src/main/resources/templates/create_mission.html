@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create a Mission</title>
+</head>
+<body>
+	<h1>Create a Mission</h1>
+	<form action="#" th:action="@{/createMission}" method="POST" th:object="${mission}">
+	<label>Mission Title:
+		<input type="text" th:field="*{title}" required />
+	</label><br/>
+	<label>Select an Agent:
+	<select th:field="*{agent}">
+		<option th:each="mission : ${agentsList}" th:text="${mission.agent}" th:value="${mission.agent}"></option>		
+	</select>
+	</label>
+	<h2>Provide Gadgets to the Agent</h2>
+	<label>Gadget 1:
+		<input type="text" th:field="*{gadget1}" required />
+	</label>
+	<label>Gadget 2:
+		<input type="text" th:field="*{gadget2}" required />
+	</label>
+	<input type="submit" value="Create Mission">
+	</form>
+	<a href="/">Cancel</a>
+</body>
+</html>

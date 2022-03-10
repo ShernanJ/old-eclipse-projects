@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/styles/styles.css}" href="../static/styles/styles.css" rel="stylesheet" />
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+<link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans&family=Space+Grotesk:wght@700&display=swap}" rel="stylesheet">
+</head>
+<body>
+	<h1 th:text="${subject}"></h1>
+	<h4>Hover over items to view options!</h4>
+		<table>
+			<tr th:each="n: ${noteList}" th:unless="${#lists.isEmpty(noteList)}" id="noteList">
+				<td th:text="${n.content}"></td>
+				<td th:text="${n.dateWritten}" class="note-info"></td>
+				<td th:text="${n.timeWritten}" class="note-info"></td>
+				<td><a th:href="@{/deleteContent/} + ${n.subject} + '/' + ${n.id}" class="note-info" id="delete-button">X</a></td>
+			</tr>
+			<tr th:if="${#lists.isEmpty(noteList)}">
+				<td><p>Empty! Add a note to this subject to view content!</p></td>
+			</tr>
+		</table>
+	<input type="button" value="Back to Home" th:onclick="'window.location.href = \'' + @{/} + '\''"/>
+</body>
+</html>
